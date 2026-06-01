@@ -60,7 +60,7 @@ export const GrowthChart: React.FC<GrowthChartProps> = ({
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
             <XAxis dataKey="name" />
             <YAxis tickFormatter={(value) => isCurrency ? `${value/1000}k` : value} />
-            <Tooltip formatter={(value: number) => [formatValue(value), isCurrency ? "Doanh thu" : "Số lượng"]} />
+            <Tooltip formatter={(value: any) => [formatValue(value), isCurrency ? "Doanh thu" : "Số lượng"]} />
             <Legend />
             <Line 
               type="monotone" 

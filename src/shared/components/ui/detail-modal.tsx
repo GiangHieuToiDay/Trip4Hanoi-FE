@@ -14,7 +14,7 @@ interface DetailModalProps {
   onClose: () => void;
   title: string;
   data: Record<string, any> | null;
-  fields: { label: string; key: string; render?: (value: any) => React.ReactNode }[];
+  fields: { label: string; key: string; render?: (value: any, item?: any) => React.ReactNode }[];
 }
 
 export function DetailModal({
@@ -37,7 +37,7 @@ export function DetailModal({
             <div key={field.key} className="grid grid-cols-3 gap-4 border-b border-gray-50 pb-2 last:border-0">
               <span className="text-sm font-semibold text-gray-500">{field.label}</span>
               <div className="col-span-2 text-sm text-gray-900">
-                {field.render ? field.render(data[field.key]) : (data[field.key] || "---")}
+                {field.render ? field.render(data[field.key], data) : (data[field.key] || "---")}
               </div>
             </div>
           ))}

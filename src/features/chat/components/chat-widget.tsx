@@ -28,8 +28,9 @@ export const ChatWidget = () => {
 
   const aiChat = useChat()
   const liveChat = useLiveChat()
-  const { saveAIItinerary, isLoading: isSaving } = useItinerary()
+  const { saveAIItinerary: saveItineraryFn, isLoading: isSaving } = useItinerary()
   const { isAuthenticated } = useUser()
+  const saveAIItinerary = (title: string, timeline: any) => saveItineraryFn({ title, timeline })
   
   const attachments = useChatAttachments()
 
