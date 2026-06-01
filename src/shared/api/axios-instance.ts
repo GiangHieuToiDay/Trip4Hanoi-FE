@@ -7,7 +7,7 @@ import { authService } from "@/features/auth/services/auth-api";
  */
 const axiosInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api',
-  timeout: 15000,
+  timeout: 120000,
 });
 
 /**
