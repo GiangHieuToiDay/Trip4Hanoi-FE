@@ -14,7 +14,7 @@ interface DetailModalProps {
   onClose: () => void;
   title: string;
   data: Record<string, any> | null;
-  fields: { label: string; key: string; render?: (value: any, item?: any) => React.ReactNode }[];
+  fields: { label: string; key: string; render?: (value: any, item: any) => React.ReactNode }[];
 }
 
 export function DetailModal({
